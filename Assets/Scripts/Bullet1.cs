@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet1 : MonoBehaviour
 {
     private Vector3 target = new(0.34f, 4.92f, 7.59f);
-    private float launchAngle = 25f;
+    //private float launchAngle = 25f;
     public float speed = 20f;
 
     // Start is called before the first frame update
