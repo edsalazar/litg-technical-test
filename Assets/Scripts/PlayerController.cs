@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
             guns[0].SetActive(true);
             guns[1].SetActive(false);
+            guns[2].SetActive(false);
         }
 
         else if (gunModel.name.Equals(GameNames.Gun2Model))
@@ -33,7 +34,16 @@ public class PlayerController : MonoBehaviour
 
             guns[1].SetActive(true);
             guns[0].SetActive(false);
+            guns[2].SetActive(false);
+        }
 
+        else if (gunModel.name.Equals(GameNames.Gun3Model))
+        {
+            currentGun = guns[2];
+
+            guns[2].SetActive(true);
+            guns[0].SetActive(false);
+            guns[1].SetActive(false);
         }
 
         gunModel.SetActive(false);
@@ -45,14 +55,20 @@ public class PlayerController : MonoBehaviour
         {
             if (currentGun.Equals(guns[0]))
             {
-                gunModels[0].transform.localPosition = new Vector3(transform.position.x, 0.3f, transform.position.z) - Vector3.forward; ;
+                gunModels[0].transform.localPosition = new Vector3(transform.position.x, 0.3f, transform.position.z) - Vector3.right - Vector3.forward;
                 gunModels[0].SetActive(true);
             }
 
             else if (currentGun.Equals(guns[1]))
             {
-                gunModels[0].transform.localPosition = new Vector3(transform.position.x, 0.3f, transform.position.z) - Vector3.forward;
+                gunModels[1].transform.localPosition = new Vector3(transform.position.x, 0.3f, transform.position.z) - Vector3.right - Vector3.forward;
                 gunModels[1].SetActive(true);
+            }
+
+            else if (currentGun.Equals(guns[2]))
+            {
+                gunModels[2].transform.localPosition = new Vector3(transform.position.x, 0.3f, transform.position.z) - Vector3.right - Vector3.forward;
+                gunModels[2].SetActive(true);
             }
         }
     }

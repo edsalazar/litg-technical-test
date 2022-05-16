@@ -164,5 +164,4 @@ MonoBehaviour:
   bulletOrigin: {fileID: 2074971014}
   target: {fileID: 0}
   force: 500
-  angle: -45
-  speed: 5
+  angle: 45

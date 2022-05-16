@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
         ReadInputs();
         CheckGround();
         Movement();
-        
     }
 
     void CheckGround()
@@ -41,10 +40,10 @@ public class PlayerMovement : MonoBehaviour
 
     void ReadInputs()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis(GameNames.Horizontal);
+        verticalInput = Input.GetAxis(GameNames.Vertical);
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown(GameNames.Jump))
         {
             isAbleToJump = true;
         }

@@ -5,17 +5,10 @@ using UnityEngine;
 
 public class Gun2ObjectController : MonoBehaviour
 {
-    public Transform bulletToRotate;
+    private Transform bulletToRotate;
 
-    public bool isInOrbit = false;
-
-
-    public float rotationSpeed = 800f;
-
-    void Start()
-    {
-        
-    }
+    public float rotationSpeed = 500f;
+    private bool isInOrbit = false;
 
     void Update()
     {
@@ -26,11 +19,21 @@ public class Gun2ObjectController : MonoBehaviour
     {
         if (transform.parent != null)
         {
-            if (transform.parent.CompareTag("Bullet") && isInOrbit)
+            if (transform.parent.CompareTag(GameNames.Bullet) && isInOrbit)
             {
                 bulletToRotate = transform.parent;
                 transform.RotateAround(bulletToRotate.transform.position, bulletToRotate.transform.forward, rotationSpeed * Time.deltaTime);
             }
         }
+    }
+
+    public bool GetIsInOrbit()
+    {
+        return isInOrbit;
+    }
+
+    public void SetIsInOrbit(bool _isInOrbit)
+    {
+        isInOrbit = _isInOrbit;
     }
 }

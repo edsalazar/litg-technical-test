@@ -4,6 +4,13 @@ public class ScenarioController : MonoBehaviour
 {
     public Animator playerAnimator;
 
+    public Vector3 gun2ObjectMinSpawnZone;
+    public Vector3 gun2ObjectMaxSpawnZone;
+    public GameObject gun2Object;
+
+    [Range(10, 100)]
+    public int numberOfObjects = 100;
+
     public bool devMode;
     void Start()
     {
@@ -11,6 +18,8 @@ public class ScenarioController : MonoBehaviour
         {
             ActivatePlayerAnimation(GameManager.Instance.GetSelectedAnimation());
         }
+
+        SpawnGun2Objects();
     }
 
     void ActivatePlayerAnimation(string animation)
@@ -34,6 +43,18 @@ public class ScenarioController : MonoBehaviour
             playerAnimator.SetBool(GameNames.isHouseDance, false);
             playerAnimator.SetBool(GameNames.isMacarenaDance, false);
             playerAnimator.SetBool(GameNames.isWaveHipHopDance, true);
+        }
+    }
+
+    void SpawnGun2Objects()
+    {
+        for(int i=0; i<numberOfObjects; i++)
+        {
+            float xAxis = Random.Range(gun2ObjectMinSpawnZone.x, gun2ObjectMaxSpawnZone.x);
+            float yAxis = Random.Range(gun2ObjectMinSpawnZone.y, gun2ObjectMaxSpawnZone.y);
+            float zAxis = Random.Range(gun2ObjectMinSpawnZone.z, gun2ObjectMaxSpawnZone.z);
+
+            Instantiate(gun2Object, new Vector3(xAxis, yAxis, zAxis), Quaternion.identity);
         }
     }
 }

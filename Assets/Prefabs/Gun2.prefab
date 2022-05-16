@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37261e9e998359d44b3e05bc013c0c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletOrigin: {fileID: 4932508399988338845}
   bullet: {fileID: 8352465294131868707, guid: 52d284327ff3cc04e8cc6d23f66f37b7, type: 3}
+  bulletOrigin: {fileID: 4932508399988338845}
   force: 500
 --- !u!1 &4932508399988338846
 GameObject:
