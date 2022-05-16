@@ -160,8 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760250a2509b58843821f26c6edd1a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gun1SO: {fileID: 11400000, guid: 85f17d412468c8e4c82259711ece5f05, type: 2}
   bullet: {fileID: 6565357503363989159, guid: 8b1d32ef571273b47bc16a11510bf60d, type: 3}
   bulletOrigin: {fileID: 2074971014}
-  target: {fileID: 0}
   force: 500
   angle: 45

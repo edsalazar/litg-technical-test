@@ -77,9 +77,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1904ec63c496b04d9a0d4345e8b69a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gun3SO: {fileID: 11400000, guid: 2d6732a3b96e73d458129b6a4a9b701b, type: 2}
   bullet: {fileID: 1202640779781883855, guid: 5ee10e18a6318b747bf5cee0758704c3, type: 3}
   bulletOrigin: {fileID: 788163448594118882}
   force: 500
+  timeToStop: 0.5
 --- !u!1001 &1757733668935203363
 PrefabInstance:
   m_ObjectHideFlags: 0

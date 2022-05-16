@@ -24,5 +24,4 @@ public static class GameNames
     public const string Gun1Model = "Gun1Model";
     public const string Gun2Model = "Gun2Model";
     public const string Gun3Model = "Gun3Model";
-
 }

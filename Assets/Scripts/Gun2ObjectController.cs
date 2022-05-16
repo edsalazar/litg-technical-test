@@ -19,6 +19,8 @@ public class Gun2ObjectController : MonoBehaviour
     {
         if (transform.parent != null)
         {
+            // If object is child of a bullet, then it rotates around the bullet
+
             if (transform.parent.CompareTag(GameNames.Bullet) && isInOrbit)
             {
                 bulletToRotate = transform.parent;

@@ -22,6 +22,8 @@ public class Bullet3 : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Decreasing bullet velocity during given time until it's stopped
+
         timeCounter += Time.deltaTime;
         bulletRigidbody.velocity = Vector3.Lerp(currentVelocity, Vector3.zero, timeCounter/timeToStop);
 
@@ -35,6 +37,8 @@ public class Bullet3 : MonoBehaviour
 
     void SetParticles()
     {
+        // Showing particles when bullet is stopped and starting coroutine with particle's time duration before whole object is destroyed
+
         GameObject explosion = Instantiate(explosionParticles, transform.position, transform.rotation);
         StartCoroutine(WaitBeforeExplosion(explosion));
         gameObject.transform.localScale = Vector3.zero;

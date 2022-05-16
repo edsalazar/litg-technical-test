@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Gun1 : MonoBehaviour
 {
+    public Gun1SO gun1SO;
+
     public GameObject bullet;
     public Transform bulletOrigin;
 
@@ -10,6 +12,12 @@ public class Gun1 : MonoBehaviour
 
     [Range(0f, 90f)]
     public float angle = 45f;
+
+    void Start()
+    {
+        force = gun1SO.force;
+        angle = gun1SO.angle;
+    }
 
     void Update()
     {
@@ -21,6 +29,8 @@ public class Gun1 : MonoBehaviour
 
     void Shoot()
     {
+        // Instantiating bullet with given angle and adding force to move it
+
         bulletOrigin.localRotation = Quaternion.Euler(-angle, 0f, 0f);
  
         GameObject bulletObject = Instantiate(bullet);

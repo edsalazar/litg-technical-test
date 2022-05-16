@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Bullet2 : MonoBehaviour
 {
-    private float magnetArea = 1f;
+    private float magneticArea = 1f;
     private float speed = 20f;
 
     private Vector3 objectPositionOffset = new Vector3(0.1f, 0.1f, 0.1f);
 
     void Update()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, magnetArea);
+        // Get objects inside magnetic area, move and put them as children of the bullet
+
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, magneticArea);
 
         foreach (var collider in hitColliders)
         {
@@ -40,11 +42,11 @@ public class Bullet2 : MonoBehaviour
 
     public float GetMagnetArea()
     {
-        return magnetArea;
+        return magneticArea;
     }
 
     public void SetMagnetArea(float _magnetArea)
     {
-        magnetArea = _magnetArea;
+        magneticArea = _magnetArea;
     }
 }

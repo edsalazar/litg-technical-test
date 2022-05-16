@@ -11,15 +11,14 @@ public class ScenarioController : MonoBehaviour
     [Range(10, 100)]
     public int numberOfObjects = 100;
 
-    public bool devMode;
     void Start()
     {
-        if(!devMode)
+        SpawnGun2Objects();
+
+        if (GameManager.Instance != null)
         {
             ActivatePlayerAnimation(GameManager.Instance.GetSelectedAnimation());
         }
-
-        SpawnGun2Objects();
     }
 
     void ActivatePlayerAnimation(string animation)

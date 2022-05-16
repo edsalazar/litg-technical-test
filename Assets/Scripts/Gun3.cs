@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Gun3 : MonoBehaviour
 {
+    public Gun3SO gun3SO;
+
     public GameObject bullet;
     public Transform bulletOrigin;
 
@@ -12,6 +14,12 @@ public class Gun3 : MonoBehaviour
     public float timeToStop = 0.5f;
 
     private bool fire = false;
+
+    void Start()
+    {
+        force = gun3SO.force;
+        timeToStop = gun3SO.timeToStop;
+    }
 
     void Update()
     {
@@ -31,6 +39,8 @@ public class Gun3 : MonoBehaviour
 
     void Shoot()
     {
+        // Instantiating bullet with given time to stop and adding force to move it
+
         GameObject bulletObject = Instantiate(bullet);
         bulletObject.transform.SetPositionAndRotation(bulletOrigin.position, Quaternion.Euler(Vector3.zero));
         bulletObject.transform.forward = bulletOrigin.transform.forward;
